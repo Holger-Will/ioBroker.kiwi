@@ -32,7 +32,7 @@
     "murmurhash3js": "^3.0.1",
     "sqlite-vec": "^0.1.7-alpha.2",
     "vectra": "^0.11.1",
-    "zod": "^3.25.56"
+    "zod": "^3.25.67"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^3.8.0",
