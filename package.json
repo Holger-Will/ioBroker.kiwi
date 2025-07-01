@@ -55,7 +55,7 @@
     "chai-as-promised": "^7.1.2",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.4.0",
     "lit": "^3.3.0",
     "mocha": "^11.3.0",
