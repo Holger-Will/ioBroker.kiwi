@@ -1,15 +1,15 @@
 {
     "Description": "Beschreibung",
-    "Describe this devicestate, its purpose, and location. This description will be used for the semantic search feature. It is language-agnostic: you can describe it in any language, and search in any other language.": "Beschreiben Sie diesen Devicestate, seinen Zweck und den Ort. Diese Beschreibung wird für die semantische Suchfunktion verwendet. Es ist Sprach-Agnostiker: Sie können es in jeder Sprache beschreiben und in jeder anderen Sprache suchen.",
+    "Describe this devicestate, its purpose, and location. This description will be used for the semantic search feature. It is language-agnostic: you can describe it in any language, and search in any other language.": "Bitte diesen Devicestate, seinen Zweck und den Ort beschreiben. Diese Beschreibung wird für die semantische Suchfunktion verwendet. Es ist Sprach-Agnostiker: Man kann in jeder Sprache beschreiben und in jeder anderen Sprache suchen.",
     "Server Settings": "Servereinstellungen",
     "Instance of Web Adapter": "Instanz des Webadapters",
-    "Select the instance of the web adapter to use for the chat client.": "Wählen Sie die Instanz des Webadapters für den Chat -Client aus.",
+    "Select the instance of the web adapter to use for the chat client.": "Instanz des Webadapters für den Chat-Client auswählen.",
     "Google Gemini API Key": "Google Gemini API -Schlüssel",
-    "Enter your API key here": "Geben Sie hier Ihren API -Schlüssel ein",
-    "Select Language Model": "Wählen Sie Sprachmodell",
-    "Chat Settings": "CHAT -Einstellungen",
+    "Enter your API key here": "Hier den API -Schlüssel eingeben",
+    "Select Language Model": "Sprachmodell auswählen",
+    "Chat Settings": "CHAT-Einstellungen",
     "System Prompt": "Systemaufforderung",
-    "the system prompt for the integrated chat client.": "Die Systemaufforderung für den integrierten Chat -Client.",
+    "the system prompt for the integrated chat client.": "Die Systemaufforderung für den integrierten Chat-Client.",
     "Temperature": "Temperatur",
-    "the 'randomness' or 'creativeness' of the response": "die \"Zufälligkeit\" oder \"Kreativität\" der Antwort"
+    "the 'randomness' or 'creativeness' of the response": "\"Zufälligkeit\" oder \"Kreativität\" der Antwort"
 }
