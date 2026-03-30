@@ -57,7 +57,7 @@ class McpServer extends utils.Adapter {
 		}
 		this.vectorDB = new VectorDB({
 			apiKey: this.config.apiKey,
-			embeddingModel: this.config.embeddingModel || "gemini-embedding-exp-03-07",
+			embeddingModel: this.config.embeddingModel || "gemini-embedding-001",
 			dimensionality: 768,
 			namespace: this.namespace,
 			dbPath: this.config.dataDir,
