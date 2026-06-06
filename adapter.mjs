@@ -5,7 +5,7 @@ import { VectorDB } from "./lib/sqlite-vectorize.mjs";
 import * as utils from "@iobroker/adapter-core";
 
 // Load your modules here, e.g.:
-// import fs from "fs";
+// import fs from "node:fs";
 class McpServer extends utils.Adapter {
 	/**
 	 * @param {Partial<utils.AdapterOptions>} [options={}]
