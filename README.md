@@ -150,7 +150,7 @@ console.log(Buffer.from("username:password").toString("base64"))
 
 MIT License
 
-Copyright (c) 2025 Holger Will <h.will@klimapartner.de>
+Copyright (c) 2025-2026 Holger Will <h.will@klimapartner.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
