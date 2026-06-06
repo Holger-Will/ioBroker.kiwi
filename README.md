@@ -146,6 +146,8 @@ console.log(Buffer.from("username:password").toString("base64"))
 - serve user files to web
 - implemented deleteObject
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 MIT License
