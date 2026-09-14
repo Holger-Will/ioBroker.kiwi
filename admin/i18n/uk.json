@@ -1,5 +1,5 @@
 {
-    "Description": "Опис",
+    "Description": "опис",
     "Describe this devicestate, its purpose, and location. This description will be used for the semantic search feature. It is language-agnostic: you can describe it in any language, and search in any other language.": "Охарактеризуйте це відхилення, його призначення та місце розташування. Цей опис буде використаний для функції семантичного пошуку. Це мова-агностик: ви можете описати його будь-якою мовою та шукати будь-якою іншою мовою.",
     "Server Settings": "Налаштування сервера",
     "Instance of Web Adapter": "Примірник веб -адаптера",
