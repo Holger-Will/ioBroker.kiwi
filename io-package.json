@@ -1,214 +1,241 @@
 {
-    "common": {
-        "messagebox": true,
-        "name": "kiwi",
-        "version": "0.4.2",
-        "news": {
-            "0.4.2": {
-                "en": "bugfix: await getHistory call",
-                "de": "Bugfix: Warten Sie Gethistory Call",
-                "ru": "Bugfix: wat Gethistory Call",
-                "pt": "Bugfix: Aguarda de chamada Gethistory",
-                "nl": "Bugfix: wacht op Gethistory Call",
-                "fr": "Bugfix: attendre l'appel de gethistory",
-                "it": "Bugfix: Aspetta la chiamata di getistoria",
-                "es": "Bugfix: espera Gethistory Call",
-                "pl": "Bugfix: Czekaj na getistory Call",
-                "uk": "Bugfix: Чекай гетісторія дзвінка",
-                "zh-cn": "bugfix：等待奇特的电话"
-            },
-            "0.4.1": {
-                "en": "added file handling API; stability improvements and better error handling; config translations; bug fixes",
-                "de": "Dateibehandlungs -API hinzugefügt; Stabilitätsverbesserungen und bessere Fehlerbehandlung; Konfigurationsübersetzungen; Fehlerbehebungen",
-                "ru": "Добавлен API обработки файлов; Улучшения стабильности и лучшая обработка ошибок; переводы конфигурации; Исправления ошибок",
-                "pt": "API de manuseio de arquivos adicionada; melhorias de estabilidade e melhor manuseio de erros; traduções de configuração; Correções de bug",
-                "nl": "File Handling API toegevoegd; stabiliteitsverbeteringen en betere foutafhandeling; configuratieverhalingen; Bugfixes",
-                "fr": "API Ajout de l'API de gestion des fichiers; Améliorations de stabilité et meilleure gestion des erreurs; Traductions de configuration; correctifs de bugs",
-                "it": "API di gestione dei file aggiunta; miglioramenti della stabilità e una migliore gestione degli errori; traduzioni di configurazione; Correzioni di bug",
-                "es": "API de manejo de archivos agregado; mejoras de estabilidad y un mejor manejo de errores; traducciones de configuración; correcciones de errores",
-                "pl": "Dodano interfejs API obsługi plików; Ulepszenia stabilności i lepsze obsługi błędów; Tłumaczenia konfiguracyjne; poprawki błędów",
-                "uk": "Додано API обробки файлів; Поліпшення стабільності та краща обробка помилок; конфігурації конфігурації; виправлення помилок",
-                "zh-cn": "添加了文件处理API；稳定性改进和更好的错误处理；配置翻译；错误修复"
-            },
-            "0.1.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "uk": "Початкова версія",
-                "zh-cn": "首次出版"
-            },
-            "0.0.2": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "uk": "Початкова версія",
-                "zh-cn": "首次出版"
-            }
-        },
-        "titleLang": {
-            "en": "kiwi",
-            "de": "kiwi",
-            "ru": "kiwi",
-            "pt": "kiwi",
-            "nl": "kiwi",
-            "fr": "kiwi",
-            "it": "kiwi",
-            "es": "kiwi",
-            "pl": "kiwi",
-            "uk": "kiwi",
-            "zh-cn": "kiwi"
-        },
-        "desc": {
-            "en": "an MCP Server that controlls io-broker with AI from any MCP Client",
-            "de": "Ein MCP-Server, der IO-Broker mit KI von jedem MCP-Client steuert",
-            "ru": "MCP-сервер, который управляет IO-брокером с ИИ от любого клиента MCP",
-            "pt": "Um servidor MCP que controla o IO Broker com IA de qualquer cliente MCP",
-            "nl": "Een MCP-server die IO-makelaar met AI van elke MCP-client beheert",
-            "fr": "Un serveur MCP qui contrôle le courtier Io-Broker avec n'importe quel client MCP",
-            "it": "Un server MCP che controlla Io-broker con AI da qualsiasi client MCP",
-            "es": "Un servidor MCP que controla IO-Broker con AI desde cualquier cliente de MCP",
-            "pl": "serwer MCP, który kontroluje broker IO z AI od dowolnego klienta MCP",
-            "uk": "Сервер MCP, який контролює IO-брокер з AI від будь-якого клієнта MCP",
-            "zh-cn": "来自任何MCP客户端的AI控制IO-broker的MCP服务器"
-        },
-        "authors": [
-            "Holger Will <h.will@klimapartner.de>"
-        ],
-        "keywords": [
-            "LLM",
-            "MCP",
-            "AI",
-            "Gemini"
-        ],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "platform": "Javascript/Node.js",
-        "icon": "kiwi-logo.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/Holger-Will/ioBroker.kiwi/main/admin/kiwi-logo.png",
-        "readme": "https://github.com/Holger-Will/ioBroker.kiwi/blob/main/README.md",
-        "loglevel": "info",
-        "tier": 3,
-        "mode": "daemon",
-        "type": "visualization",
-        "compact": true,
-        "connectionType": "local",
-        "dataSource": "push",
-        "adminUI": {
-            "config": "json",
-            "custom": "json"
-        },
-        "localLinks": {
-            "_default": "%protocol%://%ip%:%port%/kiwi/%instance%/index.html"
-        },
-        "webExtension": "lib/web.js",
-        "supportCustoms": true,
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.4.10"
-            }
-        ]
+  "common": {
+    "messagebox": true,
+    "name": "kiwi",
+    "version": "0.6.1",
+    "news": {
+      "0.6.1": {
+        "en": "removed the non-functional Webhook URL setting\n**getHistory reworked:** detects the history adapter of the state, times as text (`-24h`, `yesterday`, dates), statistics computed by the adapter (incl. meter consumption), values per interval, clear error messages and timeouts instead of empty results\nnew tool **listHistoryStates**: find states that have history\ngetHistory follows aliases (`alias.0.*`) to the logged target state and loads long ranges (e.g. a whole year) completely",
+        "de": "Die defekte Webhook-URL-Einstellung entfernt\n**GetHistory überarbeitet: ** erkennt den Statusadapter, Zeiten als Text (`-24h`, `Yesterday`, Daten), vom Adapter berechnete Statistiken (inkl. Zählerverbrauch), Werte pro Intervall, klare Fehlermeldungen und Timeouts statt leerer Ergebnisse\nneues Tool **ListHistoryStates**: Finde Staaten mit Historie\nGetHistory folgt Aliasen (`alias.0.*`) zum Log-Zielstatus und lädt lange Bereiche (z. B. ein ganzes Jahr)",
+        "ru": "удален нефункциональный параметр URL-адреса Webhook\n**GetHistory переработан: ** определяет адаптер истории состояния, время в текстовом виде («-24 часа», «вчера», даты), статистику, вычисленную адаптером (включая потребление счетчиков), значения за интервал, устраняет сообщения об ошибках и тайм-ауты вместо пустых результатов\nновый инструмент **ListHistoryStates**: найдите штаты с историей\nGetHistory переводит псевдонимы (`alias.0.*`) в зарегистрированное целевое состояние и полностью загружает большие диапазоны (например, целый год)",
+        "pt": "removeu o URL não funcional do Webhook\n**GetHistory reformulado: ** detecta o adaptador de histórico do estado, horas como texto (`-24h`, `ontem`, datas), estatísticas computadas pelo adaptador (incl. consumo do medidor), valores por intervalo, mensagens de erro claras e tempos limite\nnova ferramenta **listHistoryStates**: encontre estados\nGetHistory segue aliases (`alias.0.*`) até o estado alvo registrado e carrega longos intervalos (por exemplo, um ano)",
+        "nl": "de niet-functionele Webhook-URL-instelling verwijderd\n**GetHistory herwerkt: ** detecteert de geschiedenisadapter van de staat, tijden als tekst (`-24u`, `gisterdag`, datums), statistieken berekend door de adapter (incl. meterverbruik), waarden per interval, duidelijke foutmeldingen en time-outs in plaats van lege resultaten\nnieuwe tool **ListHistoryStates**: vind staten met een geschiedenis\nGetHistory volgt aliassen (`alias.0.*`) naar de geregistreerde doelstatus en laadt grote reeksen (bijvoorbeeld een heel jaar) volledig",
+        "fr": "supprimé le paramètre d'URL non fonctionnel du Webhook\n**GetHistory reworked :** détecte l'historique de l'état, les heures sous forme de texte (« -24 h », « hier », dates), les statistiques calculées par l'adaptateur (y compris la consommation du compteur), les valeurs par intervalle, les messages d'erreur clairs et les délais d'attente\nnouvel outil **ListHistoryStates** : trouvez les États qui ont un historique\nGetHistory suit les alias (`alias.0.*`) jusqu'à l'état cible enregistré et charge complètement de longues plages (par exemple, un an)",
+        "it": "rimosso l'URL Webhook non funzionante\n**GetHistory rielaborato: ** rileva la cronologia dello stato, i tempi come testo (`-24h`, `ieri`, date), le statistiche calcolate dall'adattatore (incluso il consumo), i valori per intervallo, cancella i messaggi di errore e i timeout\nnuovo strumento **ListHistoryStates**: trova stati storici\nGetHistory segue gli alias (`alias.0.*`) allo stato target registrato e carica i long range (ad es. un anno intero)",
+        "es": "quitó el ajuste de URL de Webhook no funcional\n**GetHistory rediseñado: ** detecta el adaptador de historial del estado, las horas como texto (-24 horas, «ayer», fechas), las estadísticas calculadas por el adaptador (incluido el consumo del contador), los valores por intervalo, borra los mensajes de error y los tiempos de espera en lugar de los resultados vacíos\nnueva herramienta **ListHistoryStates**: busque estados con historial\nGetHistory sigue los alias (`alias.0.*`) al estado objetivo registrado y carga rangos largos (por ejemplo, todo un año)",
+        "pl": "usunięto niefunkcjonalne ustawienie adresu URL Webhook\n**GetHistory przepracowano: ** wykrywa adapter historii stanu, czasy jako tekst (`-24h`, `wczoraj`, daty), statystyki obliczone przez adapter (w tym zużycie licznika), wartości na interwał, wyraźne komunikaty o błędach i limity czasu zamiast pustych wyników\nnowe narzędzie **ListHistoryStates**: znajdź stany, które mają historię\nGetHistory podąża za aliasami (`alias.0.*`) do zarejestrowanego stanu docelowego i całkowicie ładuje długie zakresy (np. cały rok)",
+        "uk": "видалено нефункціональне налаштування URL-адреси Webhook\n**GetHistory перероблено: ** виявляє адаптер історії стану, час як текст (`-24h`, `вчора`, дати), статистику, обчислену адаптером (включаючи споживання лічильника), значення за інтервал, чіткі повідомлення про помилки та тайм-аути замість порожніх результатів\nновий інструмент**ListHistoryStates**: пошук штатів, які мають історію\nGetStory слідує за псевдонімами (`alias.0.*`) до зафіксованого цільового стану і повністю завантажує великі діапазони (наприклад, цілий рік)",
+        "zh-cn": "删除了无法正常运行的 Webhook URL 设置\n**getHistory 重做了：** 检测状态的历史记录适配器、时间（`-24h`、`昨天'、日期）、适配器计算的统计数据（包括仪表消耗）、每个间隔的值、清除错误消息和超时而不是空结果\n新工具 **ListHistoryStates**：查找有历史记录的州\nGetHistory 遵循别名（`alias.0.*`）到记录的目标状态，并完全加载长范围（例如一整年）"
+      },
+      "0.6.0": {
+        "en": "documented the AI and vector store integration status, branching and release process\n**Breaking:** Node.js >= 22 and admin >= 7.6.20 required\ndependencies updated (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, zod 4, mingo 7)\nfix: adapter no longer crashes in a loop when no API key is configured\nCI: tests on Node.js 22/24/26 (Windows only for releases), GitHub release on tag, new Dependabot auto-merge workflow\nnew setting **AI provider** (OpenAI default, Google Gemini): the API key is used for chat and embeddings of the selected provider; model list per provider; OpenAI chat with tool calling\nfix: the MCP endpoint (web extension) now decrypts the stored API key",
+        "de": "dokumentierte den Integrationsstatus, Branch und Release von KI und Vector Store\n**Breaking: ** Node.js >= 22 und admin >= 7.6.20 nötig\nAbhängigkeiten aktualisiert (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, Zod 4, Mingo 7)\nFix: Adapter stürzt nicht mehr ab, wenn kein API-Key konfiguriert ist\nCI: Tests auf Node.js 22/24/26 (Windows nur für Releases), GitHub-Release on Tag, neuer Dependabot Auto-Merge\nneue Einstellung **AI-Provider** (OpenAI-Standard, Google Gemini): Der API-Key wird für Chat und Einbettung verwendet; Modellliste pro Anbieter; OpenAI-Chat mit Toolaufruf\nFix: Die MCP-Erweiterung entschlüsselt jetzt den API-Schlüssel",
+        "ru": "задокументировал состояние интеграции ИИ и векторных хранилищ, процесс ветвления и выпуска\n**Срочно: ** Требуется файл Node.js >= 22 и администратор >= 7.6.20\nобновлены зависимости (Gemini SDK 2, OpenAI SDK 7, улучшенный sqlite3 12.11, MCP SDK 1.32, зод 4, 7 минут)\nисправлено: адаптер больше не зависает в цикле при отсутствии настроенного ключа API\nCI: тесты на Node.js 22/24/26 (версии доступны только для Windows), выпуск GitHub по тегу, новый рабочий процесс автоматического слияния Dependabot\nновая настройка **поставщик AI** (по умолчанию OpenAI, Google Gemini): ключ API используется для чата и встраивания выбранного провайдера; список моделей для каждого поставщика; чат OpenAI с вызовом инструментов\nисправлено: конечная точка MCP (веб-расширение) теперь расшифровывает сохраненный ключ API",
+        "pt": "documentou o status de integração, ramificação e liberação de IA e loja vetorial\n**Breve: ** Node.js >= 22 e admin >= 7.6.20 exigidos\ndependências atualizadas (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, zod 4, mingo 7)\ncorreção: o adaptador não trava mais sem chave de API\nCI: testes em Node.js 22/24/26 (Windows só para versões), GitHub release on tag, novo fluxo de trabalho Dependabot\nnova configuração **AI** (padrão OpenAI, Google Gemini): a chave de API é usada para chat e embeddings do provedor selecionado; lista de modelos por provedor; chat OpenAI com chamada\ncorreção: o endpoint MCP agora decifra a chave de API armazenada",
+        "nl": "documenteerde de integratiestatus, de vertakking en het releaseproces van AI en vectoropslag\n**Brekend: ** Node.js >= 22 en admin >= 7,6,20 vereist\nafhankelijkheden bijgewerkt (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, zod 4, mingo 7)\noplossing: de adapter crasht niet langer tijdens een lus wanneer er geen API-sleutel is geconfigureerd\nCI: tests op Node.js 24/22/26 (alleen voor Windows voor releases), GitHub-release op tag, nieuwe workflow voor automatisch samenvoegen van Dependabot\nnieuwe instelling **AI-provider** (standaard OpenAI, Google Gemini): de API-sleutel wordt gebruikt voor chatten en inbedden van de geselecteerde provider; modellenlijst per provider; OpenAI-chat met aanroepen van tools\noplossing: het MCP-eindpunt (webextensie) decodeert nu de opgeslagen API-sleutel",
+        "fr": "a documenté l'état d'intégration, les succursales et le processus de sortie de l'IA et des magasins vectoriels\n**Breaking :** Node.js >= 22 et admin >= 7.6.20 requis\ndépendances mises à jour (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, zod 4, mingo 7)\nfix : l'adaptateur ne plante plus en boucle sans clé API configurée\nCI : tests sur Node.js le 24/22/26 (Windows uniquement), GitHub sur tag, nouveau workflow de fusion automatique Dependabot\nnouveau paramètre **AI** (OpenAI par défaut, Google Gemini) : la clé API est utilisée pour le chat et l'intégration du fournisseur sélectionné ; liste des modèles par fournisseur ; chat OpenAI avec outil\nfix : le terminal MCP (extension Web) déchiffre la clé API stockée",
+        "it": "ha documentato lo stato di integrazione, ramificazione e rilascio di AI e vector store\n**Rottura: ** Node.js >= 22 e admin >= 7.6.20 richiesti\ndipendenze aggiornate (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, zod 4, mingo 7)\nfix: l'adattatore non si blocca più se non è configurata una chiave API\nCI: test su Node.js 22/24/26 (solo Windows per le release), GitHub su tag, nuovo workflow Dependabot\nnuova impostazione **AI provider** (OpenAI default, Google Gemini): la chiave API è usata per chat e incorporamenti del provider selezionato; chat OpenAI con tool call\nfix: l'endpoint MCP (estensione web) ora decifra la chiave API",
+        "es": "documentó el estado de integración de la IA y la tienda vectorial\n**Última hora: ** Node.js >= 22 y admin >= 7.6.20 requerido\ndependencias actualizadas (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, zod 4, mingo 7)\nsolución: el adaptador ya no se bloquea en bucle si no hay una clave API\nCI: pruebas en Node.js 22/24/26 (solo en Windows), GitHub release on tag, nuevo flujo de trabajo de fusión automática del Dependabot\nnueva configuración **proveedor de AI** (OpenAI por defecto, Google Gemini): la clave de API se utiliza para el chat y las incrustaciones del proveedor seleccionado; lista de modelos por proveedor; chat de OpenAI con llamadas\nsolución: el punto final MCP (extensión web) descifra ahora la clave API guardada",
+        "pl": "udokumentował stan integracji AI i magazynu wektorowego, proces rozgałęziania i uwalniania\n**Przerwanie: ** Node.js >= 22 i admin >= 7.6.20 wymagane\nzaktualizowane zależności (Gemini SDK 2, OpenAI SDK 7, better-sqlite3 12.11, MCP SDK 1.32, zod 4, mingo 7)\npoprawka: adapter nie ulega awarii w pętli, gdy nie jest skonfigurowany klucz API\nCI: testy na Node.js 22/24/26 (Windows tylko dla wersji), wydanie GitHub na tagu, nowy przepływ pracy automatycznego scalania Dependabot\nnowe ustawienie**Dostawca AI** (domyślnie OpenAI, Google Gemini): klucz API służy do czatu i osadzania wybranego dostawcy; lista modeli dla każdego dostawcy; czat OpenAI z wywoływaniem narzędzi\npoprawka: punkt końcowy MCP (rozszerzenie internetowe) teraz odszyfruje przechowywany klucz API",
+        "uk": "задокументовано стан інтеграції AI та векторного сховища, розгалуження та процес випуску\n**Порушення: ** Node.js >= 22 і адміністратор> = 7.6.20 потрібно\nоновлені залежності (SDK Gemini 2, OpenAI SDK 7, кращий-sqlite3 12.11, SDK MCP 1.32, zod 4, мінго 7)\nвиправлено: адаптер більше не виходить з ладу в циклі, коли ключ API не налаштований\nCI: тести на Node.js 22/24/26 (Windows лише для випусків), випуск GitHub на тегу, новий робочий процес автоматичного об'єднання Dependabot\nнове налаштування **постачальник AI** (OpenAI за замовчуванням, Google Gemini): ключ API використовується для чату та вбудовування вибраного провайдера; список моделей для кожного постачальника; чат OpenAI із викликом інструменту\nвиправлено: кінцева точка MCP (веб-розширення) тепер розшифровує збережений ключ API",
+        "zh-cn": "记录了 AI 和矢量存储的集成状态、分支和发布流程\n**中断：** Node.js >= 22 且需要管理员 >= 7.6.20\n依赖关系已更新（Gemini SDK 2、OpenAI SDK 7、better-sqlite3 12.11、MCP SDK 1.32、zod 4、mingo 7）\n修复：未配置 API 密钥时，适配器不再循环崩溃\nCI：在 Node.js 22/24/26（仅限 Windows 发行版）上进行测试，GitHub 按标签发布，新的 Dependabot 自动合并工作流程\n新设置 **AI 提供商**（默认为 OpenAI，Google Gemini）：API 密钥用于所选提供商的聊天和嵌入；每个提供商的型号列表；带工具调用的 OpenAI 聊天\n修复：MCP 端点（Web 扩展）现在可以解密存储的 API 密钥"
+      },
+      "0.4.2": {
+        "en": "bugfix: await getHistory call",
+        "de": "Bugfix: Warten Sie Gethistory Call",
+        "ru": "Bugfix: wat Gethistory Call",
+        "pt": "Bugfix: Aguarda de chamada Gethistory",
+        "nl": "Bugfix: wacht op Gethistory Call",
+        "fr": "Bugfix: attendre l'appel de gethistory",
+        "it": "Bugfix: Aspetta la chiamata di getistoria",
+        "es": "Bugfix: espera Gethistory Call",
+        "pl": "Bugfix: Czekaj na getistory Call",
+        "uk": "Bugfix: Чекай гетісторія дзвінка",
+        "zh-cn": "bugfix：等待奇特的电话"
+      },
+      "0.4.1": {
+        "en": "added file handling API; stability improvements and better error handling; config translations; bug fixes",
+        "de": "Dateibehandlungs -API hinzugefügt; Stabilitätsverbesserungen und bessere Fehlerbehandlung; Konfigurationsübersetzungen; Fehlerbehebungen",
+        "ru": "Добавлен API обработки файлов; Улучшения стабильности и лучшая обработка ошибок; переводы конфигурации; Исправления ошибок",
+        "pt": "API de manuseio de arquivos adicionada; melhorias de estabilidade e melhor manuseio de erros; traduções de configuração; Correções de bug",
+        "nl": "File Handling API toegevoegd; stabiliteitsverbeteringen en betere foutafhandeling; configuratieverhalingen; Bugfixes",
+        "fr": "API Ajout de l'API de gestion des fichiers; Améliorations de stabilité et meilleure gestion des erreurs; Traductions de configuration; correctifs de bugs",
+        "it": "API di gestione dei file aggiunta; miglioramenti della stabilità e una migliore gestione degli errori; traduzioni di configurazione; Correzioni di bug",
+        "es": "API de manejo de archivos agregado; mejoras de estabilidad y un mejor manejo de errores; traducciones de configuración; correcciones de errores",
+        "pl": "Dodano interfejs API obsługi plików; Ulepszenia stabilności i lepsze obsługi błędów; Tłumaczenia konfiguracyjne; poprawki błędów",
+        "uk": "Додано API обробки файлів; Поліпшення стабільності та краща обробка помилок; конфігурації конфігурації; виправлення помилок",
+        "zh-cn": "添加了文件处理API；稳定性改进和更好的错误处理；配置翻译；错误修复"
+      },
+      "0.1.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "uk": "Початкова версія",
+        "zh-cn": "首次出版"
+      },
+      "0.0.2": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "uk": "Початкова версія",
+        "zh-cn": "首次出版"
+      }
     },
-    "protectedNative": [
-        "apiKey"
-    ],
-    "encryptedNative": [
-        "apiKey"
-    ],
-    "native": {
-        "webInstance": "*",
-        "models": "gemini-2.5-flash-preview-05-20",
-        "embeddingModel": "gemini-embedding-exp-03-07",
-        "apiKey": "",
-        "temperature": 0.2,
-        "namespace": "kiwi.0",
-        "dataDir": "/opt/iobroker-data/kiwi.0",
-        "systemPrompt": "Your Name is Kiwi. You are a friendly assistant that can help control and maintain ioBroker Systems."
+    "titleLang": {
+      "en": "kiwi",
+      "de": "kiwi",
+      "ru": "kiwi",
+      "pt": "kiwi",
+      "nl": "kiwi",
+      "fr": "kiwi",
+      "it": "kiwi",
+      "es": "kiwi",
+      "pl": "kiwi",
+      "uk": "kiwi",
+      "zh-cn": "kiwi"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "chat",
-            "type": "channel",
-            "common": {
-                "name": "Chat_Interface"
-            },
-            "native": {}
-        },
-        {
-            "_id": "chat.prompt",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "promt",
-                "desc": "The prompt that is sent to the AI model for processing.",
-                "type": "string",
-                "read": true,
-                "write": true
-            },
-            "native": {}
-        },
-        {
-            "_id": "chat.response",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "response",
-                "desc": "The response from the AI model.",
-                "type": "string",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "",
-            "type": "meta",
-            "common": {
-                "name": "Kiwi Adapter File Storage",
-                "type": "meta"
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "an MCP Server that controlls io-broker with AI from any MCP Client",
+      "de": "Ein MCP-Server, der IO-Broker mit KI von jedem MCP-Client steuert",
+      "ru": "MCP-сервер, который управляет IO-брокером с ИИ от любого клиента MCP",
+      "pt": "Um servidor MCP que controla o IO Broker com IA de qualquer cliente MCP",
+      "nl": "Een MCP-server die IO-makelaar met AI van elke MCP-client beheert",
+      "fr": "Un serveur MCP qui contrôle le courtier Io-Broker avec n'importe quel client MCP",
+      "it": "Un server MCP che controlla Io-broker con AI da qualsiasi client MCP",
+      "es": "Un servidor MCP que controla IO-Broker con AI desde cualquier cliente de MCP",
+      "pl": "serwer MCP, który kontroluje broker IO z AI od dowolnego klienta MCP",
+      "uk": "Сервер MCP, який контролює IO-брокер з AI від будь-якого клієнта MCP",
+      "zh-cn": "来自任何MCP客户端的AI控制IO-broker的MCP服务器"
+    },
+    "authors": [
+      "Holger Will <h.will@klimapartner.de>",
+      "Michael Pröpster <imp@outlook.de>"
+    ],
+    "keywords": [
+      "LLM",
+      "MCP",
+      "AI",
+      "Gemini"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "kiwi-logo.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/michiproep/ioBroker.kiwi/main/admin/kiwi-logo.png",
+    "readme": "https://github.com/michiproep/ioBroker.kiwi/blob/main/README.md",
+    "loglevel": "info",
+    "tier": 3,
+    "mode": "daemon",
+    "type": "visualization",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json",
+      "custom": "json"
+    },
+    "localLinks": {
+      "_default": "%protocol%://%ip%:%port%/kiwi/%instance%/index.html"
+    },
+    "webExtension": "lib/web.js",
+    "supportCustoms": true,
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.6.20"
+      }
     ]
+  },
+  "protectedNative": [
+    "apiKey"
+  ],
+  "encryptedNative": [
+    "apiKey"
+  ],
+  "native": {
+    "webInstance": "*",
+    "aiProvider": "openai",
+    "models": "",
+    "apiKey": "",
+    "temperature": 0.2,
+    "namespace": "kiwi.0",
+    "dataDir": "/opt/iobroker-data/kiwi.0",
+    "systemPrompt": "Your Name is Kiwi. You are a friendly assistant that can help control and maintain ioBroker Systems."
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "chat",
+      "type": "channel",
+      "common": {
+        "name": "Chat_Interface"
+      },
+      "native": {}
+    },
+    {
+      "_id": "chat.prompt",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "promt",
+        "desc": "The prompt that is sent to the AI model for processing.",
+        "type": "string",
+        "read": true,
+        "write": true
+      },
+      "native": {}
+    },
+    {
+      "_id": "chat.response",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "response",
+        "desc": "The response from the AI model.",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "",
+      "type": "meta",
+      "common": {
+        "name": "Kiwi Adapter File Storage",
+        "type": "meta"
+      },
+      "native": {}
+    }
+  ]
 }

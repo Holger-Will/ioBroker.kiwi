@@ -1,54 +1,33 @@
-const path = require("path");
+const path = require("node:path");
 const { tests } = require("@iobroker/testing");
+const { expect } = require("chai");
 
 // Run tests
 tests.integration(path.join(__dirname, ".."), {
-	//            ~~~~~~~~~~~~~~~~~~~~~~~~~
-	// This should be the adapter's root directory
-
 	// If the adapter may call process.exit during startup, define here which exit codes are allowed.
 	// By default, termination during startup is not allowed.
 	allowedExitCodes: [11],
 
-	// To test against a different version of JS-Controller, you can change the version or dist-tag here.
-	// Make sure to remove this setting when you're done testing.
-	controllerVersion: "latest", // or a specific version like "4.0.1"
+	// Always test against the latest js-controller
+	controllerVersion: "latest",
 
-	// Define your own tests inside defineAdditionalTests
 	defineAdditionalTests({ suite }) {
-		// All tests (it, describe) must be grouped in one or more suites. Each suite sets up a fresh environment for the adapter tests.
-		// At the beginning of each suite, the databases will be reset and the adapter will be started.
-		// The adapter will run until the end of each suite.
-
-		// Since the tests are heavily instrumented, each suite gives access to a so called "harness" to control the tests.
-		suite("Test sendTo()", (getHarness) => {
-			// For convenience, get the current suite's harness before all tests
+		suite("Startup without API key", (getHarness) => {
 			let harness;
 			before(() => {
 				harness = getHarness();
 			});
 
-			it("Should work", () => {
-				return new Promise(async (resolve) => {
-					// Start the adapter and wait until it has started
-					await harness.startAdapterAndWait();
+			it("starts, keeps running and reports not connected", async function () {
+				this.timeout(60000);
+				await harness.startAdapterAndWait();
+				// give onReady time to finish
+				await new Promise((resolve) => setTimeout(resolve, 5000));
 
-					// Perform the actual test:
-					harness.sendTo("adapter.0", "test", "message", (resp) => {
-						console.dir(resp);
-						resolve();
-					});
-				});
+				expect(harness.isAdapterRunning()).to.equal(true);
+				const state = await harness.states.getStateAsync("kiwi.0.info.connection");
+				expect(state && state.val).to.equal(false);
 			});
 		});
-		/*
-		// While developing the tests, you can run only a single suite using `suite.only`...
-		suite.only("Only this will run", (getHarness) => {
-			// ...
-		});
-		// ...or prevent a suite from running using `suite.skip`:
-		suite.skip("This will never run", (getHarness) => {
-			// ...
-		}); */
 	},
 });

@@ -18,20 +18,45 @@
 					"lg": 6,
 					"xl": 6
 				},
-				"apiKey": {
-					"type": "text",
-					"label": "Google Gemini API Key",
-					"tooltip": "Enter your API key here",
+				"aiProvider": {
+					"type": "select",
+					"label": "AI provider",
+					"tooltip": "Used for the chat bot and for the semantic search embeddings. The API key must belong to this provider.",
+					"options": [
+						{
+							"label": "OpenAI",
+							"value": "openai"
+						},
+						{
+							"label": "Google Gemini",
+							"value": "gemini"
+						}
+					],
+					"newLine": true,
 					"xs": 12,
-					"sm": 12,
-					"md": 12,
-					"lg": 12,
-					"xl": 12
+					"sm": 6,
+					"md": 6,
+					"lg": 6,
+					"xl": 6
+				},
+				"apiKey": {
+					"type": "password",
+					"label": "API Key",
+					"tooltip": "API key of the selected AI provider",
+					"xs": 12,
+					"sm": 6,
+					"md": 6,
+					"lg": 6,
+					"xl": 6
 				},
 				"models": {
 					"type": "selectSendTo",
-					"command": "getGeminiModels",
+					"command": "getModels",
+					"jsonData": "{\"provider\": \"${data.aiProvider}\", \"apiKey\": \"${data.apiKey}\"}",
+					"alsoDependsOn": ["aiProvider", "apiKey"],
+					"manual": true,
 					"label": "Select Language Model",
+					"help": "Empty: default model of the provider",
 					"xs": 12,
 					"sm": 6,
 					"md": 6,

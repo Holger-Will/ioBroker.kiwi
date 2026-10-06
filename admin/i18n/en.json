@@ -4,12 +4,16 @@
 	"Server Settings": "Server Settings",
 	"Instance of Web Adapter": "Instance of Web Adapter",
 	"Select the instance of the web adapter to use for the chat client.": "Select the instance of the web adapter to use for the chat client.",
-	"Google Gemini API Key": "Google Gemini API Key",
 	"Enter your API key here": "Enter your API key here",
 	"Select Language Model": "Select Language Model",
 	"Chat Settings": "Chat Settings",
 	"System Prompt": "System Prompt",
 	"the system prompt for the integrated chat client.": "the system prompt for the integrated chat client.",
 	"Temperature": "Temperature",
-	"the 'randomness' or 'creativeness' of the response": "the 'randomness' or 'creativeness' of the response"
+	"the 'randomness' or 'creativeness' of the response": "the 'randomness' or 'creativeness' of the response",
+	"AI provider": "AI provider",
+	"Used for the chat bot and for the semantic search embeddings. The API key must belong to this provider.": "Used for the chat bot and for the semantic search embeddings. The API key must belong to this provider.",
+	"API Key": "API Key",
+	"API key of the selected AI provider": "API key of the selected AI provider",
+	"Empty: default model of the provider": "Empty: default model of the provider"
 }

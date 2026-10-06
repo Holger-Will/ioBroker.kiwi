@@ -1,9 +1,12 @@
 {
+	"i18n": true,
 	"type": "panel",
 	"items": {
 		"description": {
 			"type": "text",
-			"label": { "en": "Description" },
+			"label": {
+				"en": "Description"
+			},
 			"newLine": true,
 			"xs": 12,
 			"sm": 12,

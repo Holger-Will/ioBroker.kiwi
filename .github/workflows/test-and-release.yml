@@ -26,66 +26,83 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: ioBroker/testing-action-check@v1
+            - uses: ioBroker/testing-action-check@v2
               with:
-                  node-version: "20.x"
-                  # Uncomment the following line if your adapter cannot be installed using 'npm ci'
-                  # install-command: 'npm install'
+                  node-version: "22.x"
                   lint: true
+                  type-checking: true
 
     # Runs adapter tests on all supported node versions and OSes
     adapter-tests:
+        needs: [check-and-lint]
+
         if: contains(github.event.head_commit.message, '[skip ci]') == false
 
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
-                node-version: [20.x, 22.x, 24.x]
+                node-version: [22.x, 24.x, 26.x]
                 os: [ubuntu-latest, windows-latest, macos-latest]
 
         steps:
-            - uses: ioBroker/testing-action-adapter@v1
+            # Windows runners are slow: only test on Windows for release tags (vX.Y.Z), not for PRs and pushes.
+            # (The job stays in the matrix so the ioBroker repository checker sees all OSes.)
+            - if: matrix.os != 'windows-latest' || startsWith(github.ref, 'refs/tags/v')
+              uses: ioBroker/testing-action-adapter@v1
               with:
                   node-version: ${{ matrix.node-version }}
                   os: ${{ matrix.os }}
-                  # Uncomment the following line if your adapter cannot be installed using 'npm ci'
-                  # install-command: 'npm install'
-# TODO: To enable automatic npm releases, create a token on npmjs.org
-# Enter this token as a GitHub secret (with name NPM_TOKEN) in the repository options
-# Then uncomment the following block:
 
-#  # Deploys the final package to NPM
-#  deploy:
-#    needs: [check-and-lint, adapter-tests]
-#
-#    # Trigger this step only when a commit on any branch is tagged with a version number
-#    if: |
-#      contains(github.event.head_commit.message, '[skip ci]') == false &&
-#      github.event_name == 'push' &&
-#      startsWith(github.ref, 'refs/tags/v')
-#
-#    runs-on: ubuntu-latest
-#
-#    # Write permissions are required to create Github releases
-#    permissions:
-#      contents: write
-#
-#    steps:
-#      - uses: ioBroker/testing-action-deploy@v1
-#        with:
-#          node-version: '20.x'
-#          # Uncomment the following line if your adapter cannot be installed using 'npm ci'
-#          # install-command: 'npm install'
-#          npm-token: ${{ secrets.NPM_TOKEN }}
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
-#
-#          # When using Sentry for error reporting, Sentry can be informed about new releases
-#          # To enable create a API-Token in Sentry (User settings, API keys)
-#          # Enter this token as a GitHub secret (with name SENTRY_AUTH_TOKEN) in the repository options
-#          # Then uncomment and customize the following block:
-#          sentry: true
-#          sentry-token: ${{ secrets.SENTRY_AUTH_TOKEN }}
-#          sentry-project: "iobroker-mcp-server"
-#          sentry-version-prefix: "iobroker.mcp-server"
-#          # If your sentry project is linked to a GitHub repository, you can enable the following option
-#          # sentry-github-integration: true
+    # Creates the release when a version tag is pushed (by `npm run release`)
+    deploy:
+        needs: [check-and-lint, adapter-tests]
+
+        # Trigger this step only when a commit on any branch is tagged with a version number
+        if: |
+            contains(github.event.head_commit.message, '[skip ci]') == false &&
+            github.event_name == 'push' &&
+            startsWith(github.ref, 'refs/tags/v')
+
+        runs-on: ubuntu-latest
+
+        # Write permissions are required to create Github releases, id-token for npm trusted publishing
+        permissions:
+            contents: write
+            id-token: write
+
+        steps:
+            # npm + GitHub release. Only enable (repository variable NPM_PUBLISH=true) once this
+            # repository is allowed to publish the npm package "iobroker.kiwi", see CONTRIBUTING.md
+            - if: vars.NPM_PUBLISH == 'true'
+              uses: ioBroker/testing-action-deploy@v1
+              with:
+                  # no npm-token: uses npm trusted publishing (OIDC)
+                  node-version: "24.x"
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+
+            # Default for the fork: GitHub release only
+            - if: vars.NPM_PUBLISH != 'true'
+              uses: actions/checkout@v6
+
+            - if: vars.NPM_PUBLISH != 'true'
+              name: Extract the version and commit body from the tag
+              id: extract_release
+              shell: bash
+              run: |
+                  VERSION="${GITHUB_REF##*/v}"
+                  echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+                  EOF=$(od -An -N6 -x /dev/urandom | tr -d ' ')
+                  {
+                    echo "BODY<<$EOF"
+                    git show -s --format=%b
+                    echo "$EOF"
+                  } >> "$GITHUB_OUTPUT"
+
+            - if: vars.NPM_PUBLISH != 'true'
+              name: Create GitHub release
+              uses: softprops/action-gh-release@v3
+              with:
+                  tag_name: ${{ github.ref_name }}
+                  name: Release v${{ steps.extract_release.outputs.VERSION }}
+                  prerelease: ${{ contains(steps.extract_release.outputs.VERSION, '-') }}
+                  body: ${{ steps.extract_release.outputs.BODY }}
